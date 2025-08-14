@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Highbrow Schoolup</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <section class="header fader">
+    <nav>
+      <a href="#"><img src="img/logo_1.png" alt="Highbrow School Logo"></a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+      <h1>Highbrow International School</h1>
+      <p>The School with Excellent Modern Teaching Techniques that make our Students Excel in their Profession.</p>
+      <a href="#" class="hero-btn">Click Here to Enroll your Child</a>
+    </div>
+  </section>
+
+  <!-- Academics -->
+  <section class="course fader">
+    <h1>Academics</h1>
+    <p>We offer a well-rounded curriculum across all levels of education, from Nursery to Secondary.</p>
+
+    <div class="row">
+      <div class="course-col">
+        <h3>Nursery</h3>
+        <p>The school is established to provide qualitative education based on sound Christian principles.</p>
+      </div>
+      <div class="course-col">
+        <h3>Primary</h3>
+        <p>We educate and inform the mind academically while transforming the heart with the gift of salvation.</p>
+      </div>
+      <div class="course-col">
+        <h3>Secondary</h3>
+        <p>Our curriculum is structured to prepare students for global success and international repute.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities -->
+  <section class="course fader">
+    <h1>Our Facilities</h1>
+    <p>We provide modern learning environments to support academic excellence and personal growth.</p>
+
+    <div class="row">
+      <div class="campus-col">
+        <img src="img/library.jpg" alt="Library">
+        <div class="layer"><h3>Library</h3></div>
+      </div>
+      <div class="campus-col">
+        <img src="img/lab.jpg" alt="Laboratory">
+        <div class="layer"><h3>Laboratory</h3></div>
+      </div>
+      <div class="campus-col">
+        <img src="img/sports.jpg" alt="Sports">
+        <div class="layer"><h3>Sports</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitions -->
+  <section class="facilities fader">
+    <h1>National/International Competitions</h1>
+    <p>Highbrow International School proudly participates in top academic competitions.</p>
+
+    <div class="row">
+      <div class="facilities-col">
+        <img src="img/ISPAK_2019_LOGO.png" alt="Spak Science Competition">
+        <h3>Spak National Science Competition</h3>
+      </div>
+      <div class="facilities-col">
+        <img src="img/CowbellPedia_Logo.jpg" alt="Cowbell Mathematics Competition">
+        <h3>Cowbell Mathematics Competition</h3>
+      </div>
+      <div class="facilities-col">
+        <img src="img/Mathematicscontestnigerianew.png" alt="Mathematics Contest in Nigeria">
+        <h3>Mathematics Contest in Nigeria</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Highbrow International School. All rights reserved.</p>
+  </footer>
+
+  <!-- Subtle Animation Script -->
+  <script>
+    const faders = document.querySelectorAll('.fader');
+    const appearOptions = {
+      threshold: 0.3,
+      rootMargin: "0px 0px -50px 0px"
+};
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+
+if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+});
+}, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+});
+
+  </script>
+  <script>
+  function showMenu() {
+    document.querySelector(".nav-links").style.right = "0";
+}
+
+  function hideMenu() {
+    document.querySelector(".nav-links").style.right = "-200px";
+}
+</script>
+</body>
+</html>
